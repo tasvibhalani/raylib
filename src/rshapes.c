@@ -269,6 +269,21 @@ void DrawLineEx(Vector2 startPos, Vector2 endPos, float thick, Color color)
     }
 }
 
+void DrawCapsule(Vector2 start, Vector2 end, float radius, Color color) {
+    float angle = atan2f(end.y - start.y, end.x - start.x);
+    float length = sqrtf((end.x - start.x) * (end.x - start.x) + (end.y - start.y) * (end.y - start.y));
+    
+    Vector2 center = {(start.x + end.x) / 2, (start.y + end.y) / 2};
+    
+    // Draw the central rectangle
+    Rectangle rect = {center.x - length / 2, center.y - radius, length, radius * 2};
+    DrawRectanglePro(rect, (Vector2){length / 2, radius}, angle * RAD2DEG, color);
+    
+    // Draw the circles at both ends
+    DrawCircleV(start, radius, color);
+    DrawCircleV(end, radius, color);
+}
+
 // Draw a color-filled circle
 void DrawCircle(int centerX, int centerY, float radius, Color color)
 {
