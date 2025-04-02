@@ -1249,6 +1249,7 @@ RLAPI Texture2D GetShapesTexture(void);                 // Get texture that is u
 RLAPI Rectangle GetShapesTextureRectangle(void);        // Get texture source rectangle that is used for shapes drawing
 
 // Basic shapes drawing functions
+RLAPI void DrawCapsule(Vector2 start, Vector2 end, float radius, Color color);
 RLAPI void DrawPixel(int posX, int posY, Color color);                                                   // Draw a pixel using geometry [Can be slow, use with care]
 RLAPI void DrawPixelV(Vector2 position, Color color);                                                    // Draw a pixel using geometry (Vector version) [Can be slow, use with care]
 RLAPI void DrawLine(int startPosX, int startPosY, int endPosX, int endPosY, Color color);                // Draw a line
