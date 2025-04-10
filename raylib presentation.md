@@ -1,28 +1,22 @@
 ---
-marp: true
-theme: uncover
-class: invert
-math : mathjax
+title: "Raylib Codebase Overview"
+author: "Your Name"
+date: "April 2025"
 ---
 
-# Raylib Project Overview
+# 📌 Project Overview
 
-## Introduction
-Raylib is a C-based programming library designed for graphics and multimedia applications. It is intended to be simple and easy to use, making it suitable for small to mid-sized 2D games and multimedia applications.
-
-## Key Features
-•⁠  ⁠Lightweight and simple API
-•⁠  ⁠Supports multiple platforms including Windows, Linux, macOS, and Raspberry Pi
-•⁠  ⁠Written in C for performance and simplicity
-•⁠  ⁠Includes multiple bindings for other programming languages
+Raylib is a lightweight and easy-to-use library written in C for learning game development. It supports multiple platforms and allows for the creation of both 2D and 3D applications. The library is structured modularly and aims to be highly readable and accessible for beginners and intermediate developers.
 
 ---
 
-# Frequently Asked Questions
+# ❓ Questions & Answers
 
-## What is Raylib?
+### What is Raylib?
+
 Raylib is a simple and easy-to-use C programming library for developing graphics and multimedia applications.
-
+ It's designed to be minimal yet powerful, emphasizing ease of use and educational value.
+ 
 ## What can I create with Raylib?
 You can create games, tools, mobile apps, and any application requiring graphical display.
 
@@ -35,70 +29,84 @@ C is a simple and low-level language that provides high performance without unne
 ## How does Raylib compare to Unity/Unreal/Godot?
 Raylib is a lightweight programming library, unlike game engines that provide extensive toolsets and editors.
 
----
+### What kind of apps can I build?
 
-# Understanding the Project
-Raylib aims to simplify game and graphics programming by offering a streamlined API. It does not come with an extensive GUI but provides low-level access to graphics programming, allowing full control over rendering and game mechanics.
+Raylib can be used to build:
+- 2D and 3D games
+- Educational tools
+- Graphical simulations
+- Multimedia applications
 
-## Key Components
-•⁠  ⁠*Core Module*: Manages window, input handling, and time control.
-•⁠  ⁠*Graphics Module*: Provides rendering functionalities like textures, shaders, and lighting.
-•⁠  ⁠*Audio Module*: Handles sound and music playback.
-•⁠  ⁠*Physics Module*: Offers basic physics integration (optional third-party physics engines can be used).
+### Which platforms are supported?
 
----
+- Windows
+- Linux
+- macOS
+- Raspberry Pi
+- Android
+- HTML5 (via WebAssembly)
 
-# Header and Source Files Overview
+### Why is Raylib written in C?
 
-## raylib.h
-This is the main header file of the Raylib library. It includes function declarations for core functionalities like window management, input handling, texture loading, drawing shapes, and more.
-
-## raymath.h
-Provides a collection of useful mathematical functions, including vector and matrix operations, commonly used in game development and graphics programming.
-
-## rgestures.h
-Handles gesture recognition for touch-based devices. It provides functions for detecting gestures like swipes, taps, pinches, and drags, enhancing interactivity in mobile applications.
-
-## rshapes.c / rshapes.h
-Manages 2D shape drawing functions. Includes support for rendering basic primitives such as lines, rectangles, circles, and polygons. It provides efficient rendering utilities for simple graphical elements in games and applications.
-
-## rmodels.c / rmodels.h
-Handles 3D model loading and manipulation. Includes functions for loading models from files, applying transformations, animating models, and rendering 3D objects efficiently.
-
-## rtextures.c / rtextures.h
-Manages texture loading and manipulation. Includes functions for loading images, generating textures, applying texture filtering, and rendering textured objects.
+C offers:
+- High performance
+- Low-level memory control
+- Portability
+- Simplicity without complex abstractions
 
 ---
 
-# Data Structures and Trade-offs
+# 🔍 Code Structure Overview
 
-## Data Structures Used
-•⁠  ⁠*Arrays*: Store simple data collections, such as vertices and textures. Fast access, but fixed size.
-•⁠  ⁠*Linked Lists*: Used for managing dynamic objects like active game entities. More flexible but slower than arrays.
-•⁠  ⁠*Structs*: Define objects like ⁠ Vector2 ⁠ (for positions) and ⁠ Rectangle ⁠ (for collisions). Lightweight and efficient.
-•⁠  ⁠*Hash Tables*: Store and retrieve assets like textures and sounds quickly. Fast lookup but requires extra memory.
+Raylib's source is divided into modules:
 
-## Trade-offs Explained
+- `rcore`: Manages windows, input, and timing
+- `rshapes`: Functions for drawing 2D shapes and handling collisions
+- `rmodels`: Functions for handling and rendering 3D models
+- `rtextures`: Manages image loading and texture manipulation
+- `raymath`: Math utilities for vectors, matrices, and quaternions
+- `raudio`: Handles sound and music playback
+- `rgestures`: Detects touch gestures for mobile platforms
 
-•⁠  ⁠*C Language*
-  - ✅ Fast and efficient
-  - ❌ Requires manual memory management
-
-•⁠  ⁠*Simple API*
-  - ✅ Easy to learn and use
-  - ❌ Lacks advanced features found in game engines
-
-•⁠  ⁠*No Built-in Game Engine Features*
-  - ✅ More flexibility for custom implementations
-  - ❌ Requires extra development effort
-
-•⁠  ⁠*Cross-Platform Support*
-  - ✅ Runs on multiple operating systems
-  - ❌ Some platform-specific adjustments may be needed
+Each module typically has both `.h` and `.c` files that define public interfaces and internal implementations.
 
 ---
 
-# Conclusion
-Raylib is a powerful yet simple library for 2D/3D graphics programming. It provides the essential tools for building multimedia applications without the complexity of traditional game engines. If you want full control over your project while keeping dependencies minimal, Raylib is an excellent choice.
+# 🧱 Data Types Used
 
-For more details, visit the [official Raylib website](https://www.raylib.com).
+### Structs
+Used extensively to define core objects like:
+- `Vector2`, `Vector3`, `Vector4` for spatial data
+- `Rectangle`, `Color`, `Image`, `Texture2D`, `Model` for game assets
+
+### Arrays
+Used for:
+- Vertices, textures, and image data
+- Managing collections of game objects or renderable elements
+
+### Enums
+Used for:
+- Defining constants (e.g., gesture types, texture formats, key codes)
+
+### Pointers
+Enable dynamic memory allocation and modular resource handling.
+
+---
+
+# ⚖️ Trade-offs
+
+| Feature                        | Pros                                            | Cons                                                 |
+|-------------------------------|--------------------------------------------------|------------------------------------------------------|
+| **Written in C**              | Fast, low-level control                         | Manual memory management, no OOP                     |
+| **Modular design**            | Easy to understand and use separately           | Requires some boilerplate to set up each module      |
+| **No GUI editors**            | Full control, clean API                         | No visual design tools                               |
+| **Cross-platform support**    | Runs on many systems                            | Needs platform-specific builds/adjustments           |
+| **Self-contained**            | No external dependencies by default             | Larger initial setup if extending functionality      |
+
+---
+
+# ✅ Summary
+
+Raylib is a robust choice for developers who want to build games or interactive apps from the ground up, especially those learning programming concepts. Its clear structure and lightweight design make it perfect for experimentation and education.
+
+For more, visit [https://www.raylib.com](https://www.raylib.com) 
