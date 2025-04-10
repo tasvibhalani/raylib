@@ -1,7 +1,5 @@
 ---
 title: "Raylib Codebase Overview"
-author: "Your Name"
-date: "April 2025"
 ---
 
 # 📌 Project Overview
