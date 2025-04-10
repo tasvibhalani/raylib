@@ -1,6 +1,6 @@
----
-title: "Raylib Codebase Overview"
----
+--
+Raylib Codebase Overview
+--
 
 # 📌 Project Overview
 
