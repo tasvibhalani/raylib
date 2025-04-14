@@ -247,6 +247,7 @@ Stream music files efficiently without loading the entire file:
 ---
 
 Short, efficient, and extremely useful for adding audio capabilities to any project!
+
 ---
 
 # raymath.h - Summary
