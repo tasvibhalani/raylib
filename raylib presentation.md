@@ -4,7 +4,7 @@ Raylib Codebase Overview
 
 # 📌 Project Overview
 
-Raylib is a lightweight and easy-to-use library written in C for learning game development. It supports multiple platforms and allows for the creation of both 2D and 3D applications. The library is structured modularly and aims to be highly readable and accessible for beginners and intermediate developers.
+Raylib is a lightweight and easy-to-use library written in C for learning game development. It supports multiple platforms and allows for the creation of both 2D and 3D applications. The library is structured modularly and aim to be highly readable and accessible for beginners and intermediate developers.
 
 ---
 
