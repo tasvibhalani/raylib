@@ -312,11 +312,9 @@ Math for graphical projections (Vector3Unproject, etc.).
 
 ## ✅ Design Highlights
 Header-only, lightweight, and highly portable.
-
 Designed for both C and C++ compatibility.
-
 Optimized for real-time applications and minimal dependencies.
----
+
 
 🎨 rshapes.c and rmodel.c Summary
 ---
