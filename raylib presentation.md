@@ -318,7 +318,11 @@ Designed for both C and C++ compatibility.
 Optimized for real-time applications and minimal dependencies.
 ---
 
+c
+Copy
+Edit
 🎨 rshapes.c and rmodel.c Summary
+---
 This summary covers 2D and 3D rendering using Raylib’s rshapes.c and rmodels.c, built on low-level OpenGL abstraction (rlgl).
 
 🟦 2D Shape Rendering (rshapes.c)
