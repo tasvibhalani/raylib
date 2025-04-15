@@ -349,6 +349,7 @@ void DrawPixel(int posX, int posY, Color color)
         rlVertex2i(posX, posY);
     rlEnd();
 }
+
 🟥 3D Shape Rendering & Model Handling (rmodels.c)
 ✅ Overview
 Renders basic 3D primitives and supports loading external 3D model formats (e.g., OBJ, GLTF).
@@ -374,7 +375,7 @@ Modular build system includes only what’s needed.
 🎯 Ideal For
 Game engines or visualizations requiring real-time 2D and 3D rendering.
 Developers needing fine control over rendering performance.
-Educational projects demonstrating low-level GPU rendering.
+Educational projects demonstrating low-level GPU rendering.
 
 # ✅ Summary
 
