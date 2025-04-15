@@ -370,10 +370,7 @@ void DrawLine3D(Vector3 startPos, Vector3 endPos, Color color) // Function to dr
     rlBegin(RL_LINES);     // Start sending line data to the GPU  
         rlColor4ub(color.r, color.g, color.b, color.a);    // Set the color of the line (red, green, blue, alpha)  
         rlVertex3f(startPos.x, startPos.y, startPos.z);   // Set the starting point of the line (in 3D space) 
-
-        rlVertex3f(endPos.x, endPos.y, endPos.z);         // Set the ending point of the line (in 3D space)
- 
-
+        rlVertex3f(endPos.x, endPos.y, endPos.z);         // Set the ending point of the line (in 3D space) 
     rlEnd();
 }
 ```
@@ -391,13 +388,6 @@ Modular build system includes only what’s needed.
 Game engines or visualizations requiring real-time 2D and 3D rendering.
 Developers needing fine control over rendering performance.
 Educational projects demonstrating low-level GPU rendering.
-
-🧠 Example to Make It Fun
----
-💡 “Imagine you’re building Minecraft or a strategy game…”
-•	Use rshapes.c to draw the 2D UI, like health bars or buttons.
-•	Use rmodels.c to load and display 3D blocks, characters, and terrain.
-•	Want to generate a perfect sphere or a fancy tower at runtime? Procedural mesh generation in rmodels.c has your back! 
 
 # ✅ Summary
 ---
