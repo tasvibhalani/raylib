@@ -318,12 +318,44 @@ Designed for both C and C++ compatibility.
 Optimized for real-time applications and minimal dependencies.
 ---
 
-# rmodels.c - Summary
+🎨 rshapes.c and rmodel.c Summary
+This summary covers 2D and 3D rendering using Raylib’s rshapes.c and rmodels.c, built on low-level OpenGL abstraction (rlgl).
 
-This file implements 3D model rendering and basic 3D shape drawing for Raylib. It includes functions to draw shapes like cubes, spheres, cylinders, and capsules directly in 3D space using OpenGL-like drawing commands via rlgl. It also provides support for loading models from formats like OBJ, GLTF, IQM, M3D, and VOX.
+🟦 2D Shape Rendering (rshapes.c)
+✅ Overview
+Renders basic 2D primitives like pixels, lines, circles, rectangles, triangles, and more.
+Uses OpenGL draw modes (LINES, TRIANGLES, QUADS) for GPU-accelerated rendering.
+Optimized for batched drawing with custom shape textures.
+
+🧱 Supported Shapes
+Pixels & Lines, Circles, Rectangles, Triangles & Ellipses
+Outline Variants: For many shapes (e.g., DrawEllipseLines, DrawRingLines)
+
+🛠 Configuration
+Enable SUPPORT_QUADS_DRAW_MODE for quad-based rendering (optional).
+
+Supports SetShapesTexture() for custom shape textures (texture atlas optimization).
+
+🚀 Design Highlights
+Efficient batching to minimize GPU state changes.
+Lightweight and customizable with compile-time flags.
+Designed for fast 2D rendering, including UIs and overlays.
+
+## 💡 Example Snippet from rshapes.c
+void DrawPixel(int posX, int posY, Color color)
+{
+    rlBegin(RL_POINTS);
+        rlColor4ub(color.r, color.g, color.b, color.a);
+        rlVertex2i(posX, posY);
+    rlEnd();
+}
+🟥 3D Shape Rendering & Model Handling (rmodels.c)
+✅ Overview
+Renders basic 3D primitives and supports loading external 3D model formats (e.g., OBJ, GLTF).
+Uses rlgl for OpenGL-like drawing.
+Allows both procedural mesh generation and file-based loading.
 
 ## 💡 Example Snippet from rmodels.c
-c
 void DrawLine3D(Vector3 startPos, Vector3 endPos, Color color)
 {
     rlBegin(RL_LINES);
@@ -333,99 +365,16 @@ void DrawLine3D(Vector3 startPos, Vector3 endPos, Color color)
     rlEnd();
 }
 
-This is a typical example showing how basic shapes are drawn using low-level rendering calls.
+🧱 Supported 3D Shapes
+Lines, Points, Circles: DrawLine3D, DrawPoint3D, DrawCircle3D, Cubes & Boxes ,Spheres, Cylinders & Cones, Capsules
 
-## 🔧 Configuration
-- Supports multiple model file formats (OBJ, GLTF, etc.)
-- Procedural mesh generation (using par_shapes.h)
-
-## 🔍 Key Includes
-- raylib.h - Main Raylib header
-- rlgl.h - Low-level OpenGL wrapper
-- raymath.h - Math utilities
-- Format loaders (e.g., OBJ, GLTF, VOX, M3D)
-
-## 🧱 Basic Shape Drawing
-Implemented functions to draw basic 3D primitives:
-- DrawLine3D, DrawPoint3D, DrawCircle3D
-- DrawCube, DrawCubeWires
-- DrawSphere, DrawSphereWires
-- DrawCylinder, DrawCylinderEx, and wire versions
-- DrawCapsule, DrawCapsuleWires
-- DrawPlane, DrawRay, DrawGrid
-
-## 📦 Model Handling
-- LoadModel() supports various formats depending on compile flags
-- LoadModelFromMesh() allows procedural mesh to be used as models
-- IsModelValid() checks for complete GPU upload
-- UnloadModel() frees all associated memory
-- GetModelBoundingBox() computes AABB from all meshes
-
-## ✅ Design Highlights
-- Modular and flag-based: only compile what you need
-- Procedural and file-based model support
-- Leverages optimized math & OpenGL abstractions
-
----
-
-# rshapes.c - Summary
-This file implements 2D shape rendering and simple collision visualization for Raylib. It includes functions to draw shapes like pixels, lines, circles, rectangles, ellipses, rings, and triangles directly in 2D space using low-level GPU drawing commands via rlgl. It also supports custom textures and batching optimization.
-
-## 💡 Example Snippet from rshapes.c
-c
-Copy
-Edit
-void DrawPixel(int posX, int posY, Color color)
-{
-    rlBegin(RL_POINTS);
-        rlColor4ub(color.r, color.g, color.b, color.a);
-        rlVertex2i(posX, posY);
-    rlEnd();
-}
-This is a typical example showing how basic 2D primitives are drawn with rlgl rendering calls.
-
-## 🔧 Configuration
-Default rendering using TRIANGLES.
-
-Optional QUADS mode with SUPPORT_QUADS_DRAW_MODE.
-
-Texture mapping for shapes using SetShapesTexture().
-
-## 🔍 Key Includes
-raylib.h - Main Raylib header
-
-rlgl.h - Low-level GPU abstraction
-
-raymath.h - Math utilities
-
-Standard libraries (math.h, float.h, stdlib.h)
-
-## 🧱 Basic 2D Shape Drawing
-Implemented functions to draw basic 2D primitives:
-
-DrawPixel, DrawLine, DrawLineV, DrawLineBezier, DrawLineEx
-
-DrawCircle, DrawCircleSector, DrawRing
-
-DrawRectangle, DrawRectangleGradientV/H, DrawRectangleRounded
-
-DrawTriangle, DrawEllipse
-
-Outline variants for circles, ellipses, and rectangles
-
-## 📦 Texture and Batching
-SetShapesTexture() lets you assign custom textures for shapes.
-
-Shapes are automatically batched to minimize draw calls and improve rendering performance.
-
-## ✅ Design Highlights
-Lightweight and efficient for 2D graphics rendering.
-
-Highly customizable via compile-time flags.
-
-Optimized for minimal GPU state changes.
-
----
+🛠 Configuration
+File format support toggled via compile flags (SUPPORT_FILEFORMAT_*)
+Modular build system includes only what’s needed.
+🎯 Ideal For
+Game engines or visualizations requiring real-time 2D and 3D rendering.
+Developers needing fine control over rendering performance.
+Educational projects demonstrating low-level GPU rendering.
 
 # ✅ Summary
 
