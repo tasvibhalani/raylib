@@ -344,11 +344,12 @@ Designed for fast 2D rendering, including UIs and overlays.
 ```c
 void DrawPixel(int posX, int posY, Color color)
 {
-    rlBegin(RL_POINTS);
-        rlColor4ub(color.r, color.g, color.b, color.a);
-        rlVertex2i(posX, posY);
-    rlEnd();
+    rlBegin(RL_POINTS);                        // Start drawing a point
+        rlColor4ub(color.r, color.g, color.b, color.a); // Set the color
+        rlVertex2i(posX, posY);                // Set the position on screen
+    rlEnd();                                   // Finish drawing
 }
+
 ```
 
 🟥 3D Shape Rendering & Model Handling (rmodels.c)
@@ -362,12 +363,17 @@ Allows both procedural mesh generation and file-based loading.
 ## 💡 Example Snippet from rmodels.c
 ---
 ```c
-void DrawLine3D(Vector3 startPos, Vector3 endPos, Color color)
+
+void DrawLine3D(Vector3 startPos, Vector3 endPos, Color color) // Function to draw a 3D line between two points in space with a given color 
 {
-    rlBegin(RL_LINES);
-        rlColor4ub(color.r, color.g, color.b, color.a);
-        rlVertex3f(startPos.x, startPos.y, startPos.z);
-        rlVertex3f(endPos.x, endPos.y, endPos.z);
+
+    rlBegin(RL_LINES);     // Start sending line data to the GPU  
+        rlColor4ub(color.r, color.g, color.b, color.a);    // Set the color of the line (red, green, blue, alpha)  
+        rlVertex3f(startPos.x, startPos.y, startPos.z);   // Set the starting point of the line (in 3D space) 
+
+        rlVertex3f(endPos.x, endPos.y, endPos.z);         // Set the ending point of the line (in 3D space)
+ 
+
     rlEnd();
 }
 ```
