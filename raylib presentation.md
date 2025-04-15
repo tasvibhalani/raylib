@@ -342,6 +342,7 @@ Lightweight and customizable with compile-time flags.
 Designed for fast 2D rendering, including UIs and overlays.
 
 ## 💡 Example Snippet from rshapes.c
+```c
 void DrawPixel(int posX, int posY, Color color)
 {
     rlBegin(RL_POINTS);
@@ -349,6 +350,7 @@ void DrawPixel(int posX, int posY, Color color)
         rlVertex2i(posX, posY);
     rlEnd();
 }
+```
 
 🟥 3D Shape Rendering & Model Handling (rmodels.c)
 ✅ Overview
@@ -357,6 +359,7 @@ Uses rlgl for OpenGL-like drawing.
 Allows both procedural mesh generation and file-based loading.
 
 ## 💡 Example Snippet from rmodels.c
+```c
 void DrawLine3D(Vector3 startPos, Vector3 endPos, Color color)
 {
     rlBegin(RL_LINES);
@@ -365,6 +368,7 @@ void DrawLine3D(Vector3 startPos, Vector3 endPos, Color color)
         rlVertex3f(endPos.x, endPos.y, endPos.z);
     rlEnd();
 }
+```
 
 🧱 Supported 3D Shapes
 Lines, Points, Circles: DrawLine3D, DrawPoint3D, DrawCircle3D, Cubes & Boxes ,Spheres, Cylinders & Cones, Capsules
