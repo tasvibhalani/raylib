@@ -254,14 +254,13 @@ Short, efficient, and extremely useful for adding audio capabilities to any proj
 This file implements essential math functions for Raylib, focusing on operations with vectors (2D, 3D, 4D), matrices, and quaternions. It provides efficient, self-contained inline functions critical for 2D and 3D graphics calculations.
 
 ## 💡 Example Snippet from raymath.h
-c
-Copy
-Edit
+```c
 RMAPI Vector2 Vector2Add(Vector2 v1, Vector2 v2)
 {
     Vector2 result = { v1.x + v2.x, v1.y + v2.y };
     return result;
 }
+```
 This example shows a basic vector addition function, typical of the small, optimized operations found throughout raymath.
 
 ## 🔧 Configuration
@@ -296,10 +295,6 @@ Matrices (Matrix): Multiplication, Inversion, Translation, Rotation
 Quaternions (Quaternion): (Included under Vector4)
 
 ## Key API examples:
-
-c
-Copy
-Edit
 Vector3 Vector3CrossProduct(Vector3 v1, Vector3 v2);
 Matrix MatrixMultiply(Matrix left, Matrix right);
 float Clamp(float value, float min, float max);
