@@ -386,6 +386,13 @@ Game engines or visualizations requiring real-time 2D and 3D rendering.
 Developers needing fine control over rendering performance.
 Educational projects demonstrating low-level GPU rendering.
 
+🧠 Example to Make It Fun
+---
+💡 “Imagine you’re building Minecraft or a strategy game…”
+•	Use rshapes.c to draw the 2D UI, like health bars or buttons.
+•	Use rmodels.c to load and display 3D blocks, characters, and terrain.
+•	Want to generate a perfect sphere or a fancy tower at runtime? Procedural mesh generation in rmodels.c has your back! 
+
 # ✅ Summary
 ---
 
