@@ -131,23 +131,27 @@ Think of them as options:
 - TextureFilter, BlendMode, CameraMode
 
 ### 🖼 Drawing & Window
-c
+
+```c
 InitWindow(800, 600, "Hello Raylib");
 BeginDrawing();
 ClearBackground(RAYWHITE);
 DrawText("Hello, world!", 10, 10, 20, BLACK);
 EndDrawing();
-
+```
 
 ### 🎮 Input
-c
-if (IsKeyPressed(KEY_SPACE)) Jump();
 
+```c
+if (IsKeyPressed(KEY_SPACE)) Jump();
+```
 
 ### 🔊 Audio
-c
+
+```c
 Sound fx = LoadSound("boom.wav");
 PlaySound(fx);
+```
 
 
 ---
