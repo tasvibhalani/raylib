@@ -400,6 +400,7 @@ SUPPORT_FILEFORMAT_OBJ     // Enables OBJ format support
 SUPPORT_FILEFORMAT_GLTF    // Enables GLTF format support
 
 Modular build system includes only what’s needed.
+
 🎯 Ideal For
 ---
 Game engines or visualizations requiring real-time 2D and 3D rendering.
