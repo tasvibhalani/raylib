@@ -389,7 +389,7 @@ void DrawLine3D(Vector3 startPos, Vector3 endPos, Color color) // Function to dr
 
 🧱 Supported 3D Shapes
 ---
-Lines, Points, Circles: DrawLine3D, DrawPoint3D, DrawCircle3D, Cubes & Boxes ,Spheres, Cylinders & Cones, Capsules
+Cube , sphere, Cylinder, Cone, Capsule and boxes
 
 🛠 Configuration
 ---
