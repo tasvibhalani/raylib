@@ -15,14 +15,8 @@ Raylib is a lightweight and easy-to-use library written in C for learning game d
 Raylib is a simple and easy-to-use C programming library for developing graphics and multimedia applications.
  It's designed to be minimal yet powerful, emphasizing ease of use and educational value.
  
-## What can I create with Raylib?
-You can create games, tools, mobile apps, and any application requiring graphical display.
+* You can create games, tools, mobile apps, and any application requiring graphical display.
 
-## What are the supported platforms?
-Raylib supports Windows, Linux, macOS, Raspberry Pi, Android, and HTML5 (WebAssembly).
-
-## Why is it coded in C?
-C is a simple and low-level language that provides high performance without unnecessary abstraction layers.
 
 ## How does Raylib compare to Unity/Unreal/Godot?
 Raylib is a lightweight programming library, unlike game engines that provide extensive toolsets and editors.
@@ -93,13 +87,13 @@ Enable dynamic memory allocation and modular resource handling.
 
 # ⚖️ Trade-offs
 
-| Feature                        | Pros                                            | Cons                                                 |
+| Feature                       | Pros                                             | Cons                                                 |
 |-------------------------------|--------------------------------------------------|------------------------------------------------------|
-| **Written in C**              | Fast, low-level control                         | Manual memory management, no OOP                     |
-| **Modular design**            | Easy to understand and use separately           | Requires some boilerplate to set up each module      |
-| **No GUI editors**            | Full control, clean API                         | No visual design tools                               |
-| **Cross-platform support**    | Runs on many systems                            | Needs platform-specific builds/adjustments           |
-| **Self-contained**            | No external dependencies by default             | Larger initial setup if extending functionality      |
+| **Written in C**              | Fast, low-level control                          | Manual memory management, no OOP                     |
+| **Modular design**            | Easy to understand and use separately            | Requires some boilerplate to set up each module      |
+| **No GUI editors**            | Full control, clean API                          | No visual design tools                               |
+| **Cross-platform support**    | Runs on many systems                             | Needs platform-specific builds/adjustments           |
+| **Self-contained**            | No external dependencies by default              | Larger initial setup if extending functionality      |
 
 ---
 
@@ -254,67 +248,6 @@ Short, efficient, and extremely useful for adding audio capabilities to any proj
 
 ---
 
-# raymath.h - Summary
-This file implements essential math functions for Raylib, focusing on operations with vectors (2D, 3D, 4D), matrices, and quaternions. It provides efficient, self-contained inline functions critical for 2D and 3D graphics calculations.
-
-## 💡 Example Snippet from raymath.h
-```c
-RMAPI Vector2 Vector2Add(Vector2 v1, Vector2 v2)
-{
-    Vector2 result = { v1.x + v2.x, v1.y + v2.y };
-    return result;
-}
-```
-This example shows a basic vector addition function, typical of the small, optimized operations found throughout raymath.
-
-## 🔧 Configuration
-RAYMATH_IMPLEMENTATION to define function bodies once.
-
-RAYMATH_STATIC_INLINE for inline-only use.
-
-RAYMATH_DISABLE_CPP_OPERATORS to disable C++ operator overloading.
-
-Angles are always in radians.
-
-Fully self-contained: no raymath function calls another internally.
-
-## 🔍 Key Includes
-<math.h> for mathematical operations (sinf, cosf, etc.)
-
-raylib.h indirectly when used with graphics modules
-
-## 🧱 Core Math Operations
-Functions provided for:
-
-Utility math: Clamp, Lerp, Normalize, Remap
-
-2D Vectors (Vector2): Add, Subtract, Length, Normalize
-
-3D Vectors (Vector3): Cross Product, Distance, Angle
-
-4D Vectors (Vector4): Dot Product, Normalize
-
-Matrices (Matrix): Multiplication, Inversion, Translation, Rotation
-
-Quaternions (Quaternion): (Included under Vector4)
-
-## Key API examples:
-Vector3 Vector3CrossProduct(Vector3 v1, Vector3 v2);
-Matrix MatrixMultiply(Matrix left, Matrix right);
-float Clamp(float value, float min, float max);
-## 📦 Advanced Features
-Matrix transforms: rotate, scale, invert, translate.
-
-Quaternion to Matrix conversions (optional).
-
-Math for graphical projections (Vector3Unproject, etc.).
-
-## ✅ Design Highlights
-Header-only, lightweight, and highly portable.
-Designed for both C and C++ compatibility.
-Optimized for real-time applications and minimal dependencies.
-
-
 🎨 rshapes.c and rmodel.c Summary
 ---
 This summary covers 2D and 3D rendering using Raylib’s rshapes.c and rmodels.c, built on low-level OpenGL abstraction (rlgl).
@@ -407,11 +340,82 @@ Modular build system includes only what’s needed.
 ---
 Game engines or visualizations requiring real-time 2D and 3D rendering.
 
-
 Learning graphics programming
 
-
 Educational projects demonstrating low-level GPU rendering.
+
+# raymath.h 
+---
+This file implements essential math functions for Raylib, focusing on operations with vectors (2D, 3D, 4D), matrices, and quaternions. It provides efficient, self-contained inline functions critical for 2D and 3D graphics calculations.
+
+
+## 💡 Example Snippet from raymath.h
+---
+
+```c
+RMAPI Vector2 Vector2Add(Vector2 v1, Vector2 v2)
+{
+    Vector2 result = { v1.x + v2.x, v1.y + v2.y };
+    return result;
+}
+```
+This example shows a basic vector addition function, typical of the small, optimized operations found throughout raymath.
+
+## 🔧 Configuration
+---
+RAYMATH_IMPLEMENTATION to define function bodies once.
+
+RAYMATH_STATIC_INLINE for inline-only use.
+
+RAYMATH_DISABLE_CPP_OPERATORS to disable C++ operator overloading.
+
+Angles are always in radians.
+
+Fully self-contained: no raymath function calls another internally.
+
+## 🔍 Key Includes
+---
+<math.h> for mathematical operations (sinf, cosf, etc.)
+
+raylib.h indirectly when used with graphics modules
+
+## 🧱 Core Math Operations
+---
+Functions provided for:
+
+Utility math: Clamp, Lerp, Normalize, Remap
+
+2D Vectors (Vector2): Add, Subtract, Length, Normalize
+
+3D Vectors (Vector3): Cross Product, Distance, Angle
+
+4D Vectors (Vector4): Dot Product, Normalize
+
+Matrices (Matrix): Multiplication, Inversion, Translation, Rotation
+
+Quaternions (Quaternion): (Included under Vector4)
+
+## Key API examples:
+---
+```c
+Vector3 Vector3CrossProduct(Vector3 v1, Vector3 v2);
+Matrix MatrixMultiply(Matrix left, Matrix right);
+float Clamp(float value, float min, float max);
+```
+
+## 📦 Advanced Features
+---
+Matrix transforms: rotate, scale, invert, translate.
+
+Quaternion to Matrix conversions (optional).
+
+Math for graphical projections (Vector3Unproject, etc.).
+
+## ✅ Design Highlights
+---
+Header-only, lightweight, and highly portable.
+Designed for both C and C++ compatibility.
+Optimized for real-time applications and minimal dependencies.
 
 # ✅ Summary
 ---
