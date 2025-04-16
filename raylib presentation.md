@@ -395,6 +395,10 @@ Lines, Points, Circles: DrawLine3D, DrawPoint3D, DrawCircle3D, Cubes & Boxes ,Sp
 ---
 File format support toggled via compile flags (SUPPORT_FILEFORMAT_*)
 
+SUPPORT_FILEFORMAT_OBJ     // Enables OBJ format support
+
+SUPPORT_FILEFORMAT_GLTF    // Enables GLTF format support
+
 Modular build system includes only what’s needed.
 🎯 Ideal For
 ---
