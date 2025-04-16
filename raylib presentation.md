@@ -425,6 +425,7 @@ Optimized for real-time applications and minimal dependencies.
 # ✅ Summary
 ---
 
+We have also used raylib in our previous "Tetris project" so we have first hand experiance of using it.
 Raylib is a robust choice for developers who want to build games or interactive apps from the ground up, especially those learning programming concepts. Its clear structure and lightweight design make it perfect for experimentation and education.
 
 For more, visit [https://www.raylib.com](https://www.raylib.com) 
