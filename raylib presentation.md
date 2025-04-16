@@ -294,6 +294,8 @@ void DrawPixel(int posX, int posY, Color color)
 }
 
 ```
+### Example of 2D Rendering
+![2D Rendering](https://i.postimg.cc/W4TNN7Fj/Screenshot-2025-04-15-at-6-50-30-PM.png)
 
 🟥 3D Shape Rendering & Model Handling (rmodels.c)
 ---
@@ -343,6 +345,9 @@ Game engines or visualizations requiring real-time 2D and 3D rendering.
 Learning graphics programming
 
 Educational projects demonstrating low-level GPU rendering.
+
+### Example of 3D Rendering
+![3D Rendering](https://i.postimg.cc/9QGXHkfJ/Screenshot-2025-04-15-at-6-49-51-PM.png)
 
 # raymath.h 
 ---
