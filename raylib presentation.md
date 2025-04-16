@@ -366,11 +366,13 @@ void DrawPixel(int posX, int posY, Color color)
 ---
 ✅ Overview
 ---
-Renders basic 3D primitives and supports loading external 3D model formats (e.g., OBJ, GLTF).
+•  It can draw simple 3D shapes like cubes and spheres.
 
-Uses rlgl for OpenGL-like drawing.
+•  It can load 3D models from files like OBJ and GLTF(GL Transmission Format)
 
-Allows both procedural mesh generation and file-based loading.
+•  It uses rlgl for drawing, which is similar to OpenGL.
+
+•  It allows creating 3D shapes either by generating them through code or loading them from files.
 
 ## 💡 Example Snippet from rmodels.c
 ---
@@ -405,7 +407,7 @@ Modular build system includes only what’s needed.
 ---
 Game engines or visualizations requiring real-time 2D and 3D rendering.
 
-Developers needing fine control over rendering performance.
+Learning graphics programming
 
 Educational projects demonstrating low-level GPU rendering.
 
