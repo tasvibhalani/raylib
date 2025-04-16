@@ -248,7 +248,7 @@ Short, efficient, and extremely useful for adding audio capabilities to any proj
 
 ---
 
-🎨 rshapes.c and rmodel.c Summary
+# 🎨 rshapes.c and rmodel.c 
 ---
 This summary covers 2D and 3D rendering using Raylib’s rshapes.c and rmodels.c, built on low-level OpenGL abstraction (rlgl).
 
