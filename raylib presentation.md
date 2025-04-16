@@ -407,7 +407,9 @@ Modular build system includes only what’s needed.
 ---
 Game engines or visualizations requiring real-time 2D and 3D rendering.
 
+
 Learning graphics programming
+
 
 Educational projects demonstrating low-level GPU rendering.
 
