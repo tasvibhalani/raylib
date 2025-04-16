@@ -323,7 +323,9 @@ This summary covers 2D and 3D rendering using Raylib’s rshapes.c and rmodels.c
 ---
 ✅ Overview
 Renders basic 2D primitives like pixels, lines, circles, rectangles, triangles, and more.
+
 Uses OpenGL draw modes (LINES, TRIANGLES, QUADS) for GPU-accelerated rendering.
+
 Optimized for batched drawing with custom shape textures.
 
 🧱 Supported Shapes
@@ -337,10 +339,14 @@ Enable SUPPORT_QUADS_DRAW_MODE for quad-based rendering (optional).
 
 Supports SetShapesTexture() for custom shape textures (texture atlas optimization).
 
+SMOOTH_CIRCLE_ERROR_RATE for the smoothness of the circle
+
 🚀 Design Highlights
 ---
 Efficient batching to minimize GPU state changes.
+
 Lightweight and customizable with compile-time flags.
+
 Designed for fast 2D rendering, including UIs and overlays.
 
 ## 💡 Example Snippet from rshapes.c
@@ -361,7 +367,9 @@ void DrawPixel(int posX, int posY, Color color)
 ✅ Overview
 ---
 Renders basic 3D primitives and supports loading external 3D model formats (e.g., OBJ, GLTF).
+
 Uses rlgl for OpenGL-like drawing.
+
 Allows both procedural mesh generation and file-based loading.
 
 ## 💡 Example Snippet from rmodels.c
@@ -386,11 +394,14 @@ Lines, Points, Circles: DrawLine3D, DrawPoint3D, DrawCircle3D, Cubes & Boxes ,Sp
 🛠 Configuration
 ---
 File format support toggled via compile flags (SUPPORT_FILEFORMAT_*)
+
 Modular build system includes only what’s needed.
 🎯 Ideal For
 ---
 Game engines or visualizations requiring real-time 2D and 3D rendering.
+
 Developers needing fine control over rendering performance.
+
 Educational projects demonstrating low-level GPU rendering.
 
 # ✅ Summary
